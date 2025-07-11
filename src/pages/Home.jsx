@@ -25,9 +25,9 @@ function Home() {
     let [hideStreak, setHideStreak] = useState(true);
 
     return (
-        <Grid container spacing={2} sx={{height: "100%"}}>
-            <Grid item xs={10}>
-                <Box sx={{backgroundColor: "gray", borderRadius: 5, width: '100%', p: 2}}>
+        <Box display={"flex"} flexDirection={"row"} width={"100%"} height={"100%"}>
+            <Box display={"flex"} flexDirection={"column"} width={"75%"} height={"80%"} margin={"2.5%"}>
+                <Box flex={"1 1 auto"} borderRadius={5} width={"100%"} sx={{backgroundColor: "gray", p: 2}}>
                     <Grid container spacing={2}>
                         <Grid item xs={3}>
                         <Card>
@@ -47,9 +47,9 @@ function Home() {
                         ))}
                     </Grid>
                 </Box>
-            </Grid>
-            <Grid item xs={2}>
-            <Box>
+            </Box>
+            <Box width={"20%"} height={"80%"} padding={"2.5%"}>
+                <Box boxShadow={"3"}>
                     <Typography>Quick Stats</Typography>
                     <Select variant={"filled"} value={quickStatsRange}
                             onChange={e => setQuickStatsRange(e.target.value)}>
@@ -70,8 +70,8 @@ function Home() {
                         <Typography visibility={hideStreak ? "visible" : "hidden"}>{`Streak: ${streak}`}</Typography>
                     </Stack>
                 </Box>
-            </Grid>
-        </Grid>
+            </Box>
+        </Box>
     );
 }
 
